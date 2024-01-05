@@ -574,6 +574,7 @@ func StatefulSetForRack(r scyllav1.RackSpec, c *scyllav1.ScyllaCluster, existing
 					},
 					ImagePullSecrets:              c.Spec.ImagePullSecrets,
 					TerminationGracePeriodSeconds: pointer.Ptr(int64(900)),
+					PriorityClassName:             r.PriorityClassName,
 				},
 			},
 			VolumeClaimTemplates: []corev1.PersistentVolumeClaim{

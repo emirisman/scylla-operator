@@ -450,6 +450,10 @@ type RackSpec struct {
 	// AgentVolumeMounts to be added to Agent container.
 	AgentVolumeMounts []corev1.VolumeMount `json:"agentVolumeMounts,omitempty" patchStrategy:"merge" patchMergeKey:"mountPath"`
 
+	// priority class of the Scylla pods in this rack.
+	// +optional
+	PriorityClassName string `json:"priorityClassName,omitempty"`
+
 	// Scylla config map name to customize scylla.yaml
 	ScyllaConfig string `json:"scyllaConfig"`
 
